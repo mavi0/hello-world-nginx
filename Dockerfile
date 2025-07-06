@@ -1,9 +1,7 @@
 FROM nginx:alpine
 
-# Remove the default nginx index.html
 RUN rm /usr/share/nginx/html/index.html
 
-# Create a beautiful Hello World HTML page
 RUN echo '<!DOCTYPE html>\
 <html lang="en">\
 <head>\
@@ -266,8 +264,6 @@ RUN echo '<!DOCTYPE html>\
 </body>\
 </html>' > /usr/share/nginx/html/index.html
 
-# Expose port 80
 EXPOSE 80
 
-# Start nginx
 CMD ["nginx", "-g", "daemon off;"] 
